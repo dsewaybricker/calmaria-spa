@@ -1,0 +1,94 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+
+header {
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha {
+            border-top: 1px solid black;
+            width: 80%;
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+
+            li {
+                list-style-type: none;
+                a {
+                    text-decoration: none;
+                    @include mixins.ff-fs-cl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
+                    font-weight: 500;
+                    transition: transform 0.5s ease;
+                    
+                    &:hover {
+                        font-weight: 700;
+                        transform: scale(1.5);
+                        
+                    }
+                }
+
+                
+            }
+        }
+
+    }
+
+    #home {
+        max-width: 1040px;
+        @include mixins.margem-central(80%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .textos-home {
+            max-width: 464px;
+
+            h1 {
+                font-size: 42px;
+                font-family: variaveis.$ft-titulos;
+                color: variaveis.$cor-primaria;
+
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+
+            }
+
+            .btn-main {
+                padding: 1rem 4rem;
+                font-family: variaveis.$ft-textos;
+                font-weight: 600;
+                font-size: 22px;
+                background-color: variaveis.$cor-secundaria;
+                color: variaveis.$cor-default;
+                border: transparent;
+                border-radius: 48px;
+                cursor: pointer;
+                transition: transform 0.5s ease;
+                &:hover{
+                    background-color: variaveis.$cor-terciaria;
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .img-home {
+            max-width: 474px;
+            
+            img {
+                width: 100%;
+            }
+        }
+    
+    }
+
+}
